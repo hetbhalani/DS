@@ -1,8 +1,8 @@
-//3
+// 15
 
 import java.util.Scanner;
 
-public class SumOfN {
+public class AvgOfN {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter length of arr");
@@ -23,3 +23,4 @@ public class SumOfN {
         System.out.println(avg);
     }
 }
+

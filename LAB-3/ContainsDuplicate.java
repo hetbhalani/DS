@@ -1,3 +1,5 @@
+// 17
+
 public class ContainsDuplicate {
     public static void main(String[] args) {
         int a[] = {2,2,4,6,1,3};
