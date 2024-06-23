@@ -1,3 +1,5 @@
+//21. Write a program to insert a number at a given location in an array. 
+
 public class AddElementInArray {
     public static void main(String[] args) {
         int location = 3;

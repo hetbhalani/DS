@@ -1,3 +1,5 @@
+//24. Write a program to delete a number from an array that is already sorted in an ascending order.
+
 public class DelenElementFromSortedArray {
     public static void main(String[] args) {
         int element = 4;

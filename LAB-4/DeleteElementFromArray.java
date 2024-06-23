@@ -1,3 +1,5 @@
+//22. Write a program to delete a number from a given location in an array.
+
 public class DeleteElementFromArray {
     public static void main(String[] args) {
         int location = 4;
