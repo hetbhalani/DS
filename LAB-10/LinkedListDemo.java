@@ -46,7 +46,7 @@ public class LinkedListDemo {
     }
 
     //vache node nakhva mate
-    public void addMiddle(int data){
+    public void addAtIndex(int data, int index){
         
     }
 
@@ -67,13 +67,13 @@ public class LinkedListDemo {
     }
 
     //first delete karva mate
-    public void deleteFirst(){
-        if(head == null){
-            System.out.println("This is empty");
-            return;
+        public void deleteFirst(){
+            if(head == null){
+                System.out.println("This is empty");
+                return;
+            }
+            head = head.next;
         }
-        head = head.next;
-    }
 
     //last delete karva mate
     public void deleteLast(){
