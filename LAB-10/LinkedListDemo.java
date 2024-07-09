@@ -46,8 +46,19 @@ public class LinkedListDemo {
     }
 
     //vache node nakhva mate
-    public void addAtIndex(int data, int index){
-        
+    public void addMiddle(int index, int data){
+        Node n1 = new Node(data);
+        Node temp = head;
+        int cnt = 1;
+
+        while(cnt != index-1){
+            temp = temp.next;
+            cnt++;
+        }
+
+        n1.next = temp.next;
+        temp.next = n1;
+
     }
 
     //print
@@ -67,13 +78,13 @@ public class LinkedListDemo {
     }
 
     //first delete karva mate
-        public void deleteFirst(){
-            if(head == null){
-                System.out.println("This is empty");
-                return;
-            }
-            head = head.next;
+    public void deleteFirst(){
+        if(head == null){
+            System.out.println("This is empty");
+            return;
         }
+        head = head.next;
+    }
 
     //last delete karva mate
     public void deleteLast(){
@@ -99,6 +110,26 @@ public class LinkedListDemo {
         curr.next = curr.next.next;
     }
 
+    //apeli value delete karva mate
+    public void deleteVal(int data){
+        Node temp = head;
+
+        while(temp.data != data){
+            temp = temp.next;
+        }
+        temp.data = temp.next.data;
+        temp.next = temp.next.next;
+    }
+
+    //reverse
+    public void reverse(){
+        Node temp = head;
+
+        while(temp != null){
+            temp.next = temp;
+        }
+    }
+
     public static void main(String[] args) {
         LinkedListDemo l1 = new LinkedListDemo();
 
@@ -113,13 +144,22 @@ public class LinkedListDemo {
         l1.addLast(6);
         l1.printData();
 
-        l1.deleteLast();
-        l1.printData();
+        // l1.deleteLast();
+        // l1.printData();
 
-        l1.deleteFirst();
-        l1.printData();
+        // l1.deleteFirst();
+        // l1.printData();
 
-        l1.deleteIndex(2);
+        // l1.deleteIndex(2);
+        // l1.printData();
+
+        // l1.addMiddle(3,19);
+        // l1.printData();
+
+        // l1.deleteVal(4);
+        // l1.printData();
+
+        l1.reverse();
         l1.printData();
     }
 }
