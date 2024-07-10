@@ -21,23 +21,23 @@ public class CountNodes {
         System.out.println(cnt);
     }
    
-    public void addLast(int data){
-        Node n2 = new Node(data);
+        public void addLast(int data){
+            Node n2 = new Node(data);
 
-        if(head == null){
-            head = n2;
-            return;
-        }
-        else{
-            Node temp = head;
-
-            while(temp.next != null){
-                temp = temp.next;
+            if(head == null){
+                head = n2;
+                return;
             }
-            temp.next = n2;
-             
+            else{
+                Node temp = head;
+
+                while(temp.next != null){
+                    temp = temp.next;
+                }
+                temp.next = n2;
+                
+            }
         }
-    }
 
     public static void main(String[] args) {
         CountNodes cn = new CountNodes();
