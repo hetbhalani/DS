@@ -121,14 +121,6 @@ public class LinkedListDemo {
         temp.next = temp.next.next;
     }
 
-    //reverse
-    public void reverse(){
-        Node temp = head;
-
-        while(temp != null){
-            temp.next = temp;
-        }
-    }
 
     public static void main(String[] args) {
         LinkedListDemo l1 = new LinkedListDemo();
@@ -159,7 +151,6 @@ public class LinkedListDemo {
         // l1.deleteVal(4);
         // l1.printData();
 
-        l1.reverse();
-        l1.printData();
+
     }
 }
