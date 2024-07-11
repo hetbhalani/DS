@@ -6,7 +6,7 @@ class Stack {
     int size = 0;
     char[] stack;
     
-    public Stack(int size) {
+    public Stack() {
         this.size = size;
         stack = new char[size];
     }

@@ -3,7 +3,7 @@ import java.util.Stack;
 public class InfixToPostfix {
     public static void main(String[] args) {
         Stack<Character> st = new Stack<>();
-        String infix = "(a+b*c/d-e*f/g/(h+i))";
+        String infix = "(a+b*c/d-e+f/g/(h+i))";
         int rank = 0;
         StringBuilder ans = new StringBuilder();
 
