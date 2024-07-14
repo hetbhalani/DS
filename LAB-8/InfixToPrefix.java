@@ -1,12 +1,21 @@
 import java.util.Stack;
 
-public class InfixToPostfix {
+public class InfixToPrefix {
     public static void main(String[] args) {
         Stack<Character> st = new Stack<>();
-        String infix = "(a+b*c/d-e+f/g/(h+i))";
+        StringBuilder infix = new StringBuilder("(a+b*c/d-e+f/g/(h+i))");
         int rank = 0;
         StringBuilder ans = new StringBuilder();
-
+        infix.reverse();
+        
+        for (int i = 0; i < infix.length(); i++) {
+            if (infix.charAt(i) == '(') {
+                infix.setCharAt(i, ')');
+            } else if (infix.charAt(i) == ')') {
+                infix.setCharAt(i, '(');
+            }
+        }
+        
         for(int i = 0; i<infix.length(); i++){
             if(infix.charAt(i) == '('){
                 st.push('(');
@@ -16,7 +25,7 @@ public class InfixToPostfix {
                 rank++;
             }
             else if(infix.charAt(i) == '+' || infix.charAt(i) == '*' || infix.charAt(i) == '/' || infix.charAt(i) == '-' || infix.charAt(i) == '^'){
-                while (!st.isEmpty() && st.peek() != '(' && precidence(st.peek()) >= precidence(infix.charAt(i))) {
+                while (!st.isEmpty() && st.peek() != '(' && precidence(st.peek()) > precidence(infix.charAt(i))) {
                     ans.append(st.pop());
                     rank--;
                 }
@@ -37,7 +46,7 @@ public class InfixToPostfix {
             ans.append(st.pop());
             rank--;
         }
-        System.out.println(ans);
+        System.out.println(ans.reverse());
         System.out.println("Rank = " + rank);
     }   
     
@@ -55,5 +64,6 @@ public class InfixToPostfix {
                 return 3;
         } 
         return -1;
+
     }
 }
