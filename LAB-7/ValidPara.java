@@ -44,7 +44,7 @@ public class ValidPara {
                 System.out.println(0);
             }
             else {
-                Stack stack = new Stack(str.length());
+                Stack stack = new Stack();
                 boolean flag = true;
                 for(int j=0; j<str.length(); j++) {
                     if(str.charAt(j) == '(') {
