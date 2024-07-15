@@ -53,22 +53,17 @@ public class RemoveDuplicate {
             return;
         }
         Node current = head;
-        Node temp = current.next;
-        Node previous = current;
-        while(current != null) {
-            while(temp != null) {
-                if(temp.data == current.data) {
-                    previous.next = temp.next;
-                    temp = temp.next;
-                    continue;
+        
+        while (current != null) {
+            Node runner = current;
+            while (runner.next != null) {
+                if (runner.next.data == current.data) {
+                    runner.next = runner.next.next;
+                } else {
+                    runner = runner.next;
                 }
-                previous = temp;
-                temp = temp.next;
             }
             current = current.next;
-            if(current == null) return;
-            previous = current;
-            temp = current.next;
         }
     }
 
@@ -78,7 +73,7 @@ public class RemoveDuplicate {
         rd1.addLast(0);
         rd1.addLast(1);
         rd1.addLast(2);
-        rd1.addLast(3);
+        rd1.addLast(2);
         rd1.addLast(4);
         rd1.addLast(0);
 
