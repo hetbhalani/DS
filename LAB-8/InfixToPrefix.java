@@ -3,7 +3,7 @@ import java.util.Stack;
 public class InfixToPrefix {
     public static void main(String[] args) {
         Stack<Character> st = new Stack<>();
-        StringBuilder infix = new StringBuilder("(a+b*c/d-e+f/g/(h+i))");
+        StringBuilder infix = new StringBuilder("((a+b^c^d)*(e+f/g))");
         int rank = 0;
         StringBuilder ans = new StringBuilder();
         infix.reverse();

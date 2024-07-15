@@ -49,13 +49,7 @@ public class ValidPara {
                 for(int j=0; j<str.length(); j++) {
                     if(str.charAt(j) == '(') {
                         stack.push(')');
-                    }
-                    else if(str.charAt(j) == '{') {
-                        stack.push('}');
-                    }
-                    else if(str.charAt(j) == '[') {
-                        stack.push(']');
-                    }
+                    } 
                     else {
                         if(stack.pop() != str.charAt(j)) {
                             flag = false;
