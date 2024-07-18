@@ -1,4 +1,4 @@
-public class sortList{
+public class SortList {
     class Node {
         int data;
         Node next;
@@ -28,20 +28,38 @@ public class sortList{
 
         }
     }
-    public static void main(String[] args) {
+
+    public Node findmid(Node head){
         if (head == null || head.next == null) {
-            return;
+            return head;
         }
 
-        Node mid = findMid(head);
+        Node slow = head;
+        Node fast = head.next;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+    public Node sort(Node head){
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        Node mid = findmid(head);
+
         Node right = mid.next;
         mid.next = null;
         Node left = head;
 
-        left = sortList(left);
-        right = sortList(right);
+        left = sort(left);
+        right = sort(right);
 
-        return merge(left, right);
+        return merge(right, left);
     }
 
     Node merge(Node l1, Node l2) {
@@ -49,7 +67,7 @@ public class sortList{
         Node temp = dummy;
 
         while (l1 != null && l2 != null) {
-            if (l1.val <= l2.val) {
+            if (l1.data <= l2.data) {
                 temp.next = l1;
                 l1 = l1.next;
             } else {
@@ -68,19 +86,32 @@ public class sortList{
         return dummy.next;
     }
 
-    Node findMid(Node head) {
-        if (head == null || head.next == null) {
-            return head;
+    public void printData(){
+        Node temp = head;
+
+        if(head == null){
+           System.out.println("Empty");
+            return;
         }
 
-        Node slow = head;
-        Node fast = head.next;
-
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+        while (temp != null) {
+            System.out.print(temp.data + "--> ");
+            temp = temp.next;
         }
-
-        return slow;
+        System.out.println("Null");
     }
-   }
+
+    public static void main(String[] args) {
+        SortList l1 = new SortList();
+
+        l1.addLast(2);
+        l1.addLast(3);
+        l1.addLast(6);
+        l1.addLast(20);
+        l1.addLast(4);
+
+        l1.head = l1.sort(l1.head);
+
+        l1.printData();
+    }
+}

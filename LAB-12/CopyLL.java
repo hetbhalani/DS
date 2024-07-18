@@ -72,7 +72,6 @@ public class CopyLL {
         printData();
 
         System.out.println("new LL");
-        CopyLL c2 = c1.copy();
-        c2.printData();
+        
     }
 }
