@@ -22,7 +22,6 @@ public class EvaluatePostfix{
                         break;
                     case '/': st.push((first > second)?first/second:second/first);
                         break;   
-                
                     default:
                         break;
                 }
