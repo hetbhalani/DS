@@ -11,20 +11,20 @@ public class DivideIntoTwoParts {
     public Node head;
     public Node tail;
 
-    // public void printData(){
-    //     Node temp = head;
+    public void printData(Node head){
+        Node temp = head;
 
-    //     if(head == null){
-    //        System.out.println("Empty");
-    //         return;
-    //     }
+        if(head == null){
+           System.out.println("Empty");
+            return;
+        }
 
-    //     while (temp.next != head) {
-    //         System.out.print(temp.data + "--> ");
-    //         temp = temp.next;
-    //     }
-    //     System.out.println("Head");
-    // }
+        do {
+            System.out.print(temp.data + " --> ");
+            temp = temp.next;
+        } while (temp != head);
+        System.out.println("Head");
+    }
 
     public void insertAtFirst(int data){
         Node n1 = new Node(data);
@@ -34,37 +34,59 @@ public class DivideIntoTwoParts {
             head = n1;
             tail = n1;
         }
-
-        n1.next = head;
-        head = n1;
-        tail.next = head;
+        else {
+            n1.next = head;
+            head = n1;
+            tail.next = head;
+        }
     }
 
     public void divide(){
+        if (head == null || head.next == head) {
+            return; 
+        }
+
         Node slow = head;
         Node fast = head;
 
-        while(fast == head || fast == tail){
+        while(fast.next != head && fast.next.next != head){
             slow  = slow.next;
             fast = fast.next.next;
         }
-        Node temp2 = slow;
-        slow.next = null;
 
-        if(fast == tail){
-            fast.next = null;
+        Node head1 = head;
+        Node head2 = slow.next;
+
+        slow.next = head1;
+
+        if (fast.next == head) {
+            fast.next = head2;
+        } else {
+            fast.next.next = head2;
         }
 
-        if(fast.next == tail){
-            fast.next.next = null;
-        }
-
-        Node temp1 = head;
+        printData(head1);
+        printData(head2);
     }
 
-   
 
     public static void main(String[] args) {
+        DivideIntoTwoParts l1 = new DivideIntoTwoParts();
+
+        l1.insertAtFirst(0);
+        l1.insertAtFirst(4);
+        l1.insertAtFirst(2);
+        l1.insertAtFirst(3);
+        l1.insertAtFirst(7);
+        l1.insertAtFirst(5);
+        l1.insertAtFirst(0);
+        l1.insertAtFirst(89);
+        l1.insertAtFirst(2);
+        l1.insertAtFirst(33);
+        l1.insertAtFirst(4);
+        l1.insertAtFirst(5);
+
+        l1.divide();
         
     }
 }
