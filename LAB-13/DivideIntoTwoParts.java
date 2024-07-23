@@ -26,6 +26,7 @@ public class DivideIntoTwoParts {
         System.out.println("Head");
     }
 
+    //insertion
     public void insertAtFirst(int data){
         Node n1 = new Node(data);
 
