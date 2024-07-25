@@ -126,7 +126,7 @@ public class DoublyLL {
         temp.rptr = null;
     }
 
-    //PRINT
+    //PRINT list
     void printList() {
         Node curr = head;
         while (curr != null) {

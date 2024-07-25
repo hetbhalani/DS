@@ -49,7 +49,6 @@ public class DeleteAlt {
             temp.rptr.lptr = temp.lptr;
             temp = temp.rptr.rptr;
         }
-
         if(temp.rptr == null){
             temp.lptr.rptr = null;
         }

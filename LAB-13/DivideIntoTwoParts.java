@@ -65,11 +65,10 @@ public class DivideIntoTwoParts {
         } else {
             fast.next.next = head2;
         }
-
         printData(head1);
+        
         printData(head2);
     }
-
 
     public static void main(String[] args) {
         DivideIntoTwoParts l1 = new DivideIntoTwoParts();
