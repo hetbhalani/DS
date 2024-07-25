@@ -9,35 +9,51 @@ public class CountNodes {
         }
     }
     public Node head;
+    public Node tail;
 
-    public void count(){
+    public void printData(){
         Node temp = head;
+
+        if(head == null){
+           System.out.println("Empty");
+            return;
+        }
+
+        while (temp.next != head) {
+            System.out.print(temp.data + "--> ");
+            temp = temp.next;
+        }
+        System.out.println("Head");
+    }
+
+    public void addLast(int data){
+        Node n1 = new Node(data);
+
+        if(head == null){
+            n1.next = n1;
+            head = n1;
+            tail = n1;
+        }
+
+        tail.next = n1;
+        n1.next = head;
+        tail = n1;
+    }
+
+    public int count(){
+        Node temp = head;
+
+        if (head == null)return 0;
+        if(head.next == head)return 1;
+
         int cnt = 1;
 
-        while(temp.next != null){
+        while(temp.next != head){
             temp = temp.next;
             cnt++;
         }
-        System.out.println(cnt);
+        return cnt;
     }
-   
-        public void addLast(int data){
-            Node n2 = new Node(data);
-
-            if(head == null){
-                head = n2;
-                return;
-            }
-            else{
-                Node temp = head;
-
-                while(temp.next != null){
-                    temp = temp.next;
-                }
-                temp.next = n2;
-                
-            }
-        }
 
     public static void main(String[] args) {
         CountNodes cn = new CountNodes();
@@ -48,7 +64,7 @@ public class CountNodes {
         cn.addLast(4);
         cn.addLast(5);
 
-        cn.count();
+        System.out.println(cn.count());
         
     }
 }

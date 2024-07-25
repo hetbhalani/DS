@@ -71,7 +71,10 @@ public class CopyLL {
         System.out.println("old LL");
         printData();
 
+        System.out.println();
+        
         System.out.println("new LL");
+        printData();
         
     }
 }
