@@ -20,6 +20,6 @@ public class BinarySearch {
                 low = mid + 1;
             }
         }
-        System.out.println("not");
+        System.out.println("not available");
     }
 }
