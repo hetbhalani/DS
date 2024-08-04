@@ -19,7 +19,8 @@ class DoublyQueue {
         if (f == 0) {
             System.out.println("Overflow");
             return;
-        } else {
+        }
+         else {
             a[f--] = data;
         }
     }
@@ -32,7 +33,8 @@ class DoublyQueue {
         if (r >= n) {
             System.out.println("Overflow");
             return;
-        } else {
+        } 
+        else {
             a[r++] = data;
         }
     }
@@ -45,7 +47,8 @@ class DoublyQueue {
         if (f >= n) {
             System.out.println("Underflow");
             return -1;
-        } else {
+        }
+         else {
             int y = a[f];
             f++;
             return y;
@@ -60,7 +63,8 @@ class DoublyQueue {
         if (r == 0) {
             System.out.println("Underflow");
             return -1;
-        } else {
+        }
+         else {
             int y = a[r];
             r--;
             return y;
