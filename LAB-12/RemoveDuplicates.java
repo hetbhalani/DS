@@ -9,7 +9,7 @@ class ListNode {
 }
 
 public class RemoveDuplicates{
-    private ListNode head;
+    public ListNode head;
 
     public void addLast(int val){
         ListNode newNode = new ListNode(val);
@@ -67,6 +67,11 @@ public class RemoveDuplicates{
         list.addLast(27);
         list.addLast(27);
 
+    
+
+        list.removeDuplicates();
+
+     
         list.printList();
     }
 }
