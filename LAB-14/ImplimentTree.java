@@ -45,6 +45,11 @@ public class ImplimentTree {
             }
         }
     }
+
+    public void delete(int data){
+        
+    }
+
     public void preorder(Node root){
         if(root == null){
             return;
