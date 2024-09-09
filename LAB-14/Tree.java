@@ -67,7 +67,7 @@ public class Tree {
         t1.preorder(t1.root);
         System.out.println();
         t1.inorder(t1.root);
-        System.out.println();
+        System.out.println();           
         t1.postorder(t1.root);
 
     }
