@@ -9,7 +9,7 @@ public class TreeTrav {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter data: ");
         int data = sc.nextInt();
-
+        //return -1 for null 
         if(data == -1){
             return null;
         }
