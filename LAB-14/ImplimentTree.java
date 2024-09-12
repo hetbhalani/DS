@@ -46,8 +46,23 @@ public class ImplimentTree {
         }
     }
 
-    public void delete(int data){
-        
+    public boolean search(Node root, int key){
+        if(root == null){
+            return false;
+        }
+
+        if(root.data == key){
+            return true;
+        }
+
+        // boolean ls = search(root.left, key);
+
+        // if(ls){
+        //     return true;
+        // }
+
+       
+        return search(root.right, key) || search(root.left, key);
     }
 
     public void preorder(Node root){
@@ -72,6 +87,8 @@ public class ImplimentTree {
         t.insert(9);
 
         t.preorder(t.root);
+
+        System.out.println(t.search(t.root, 7));
 
     }
 }
