@@ -62,10 +62,10 @@ public class BinaryTreeDemo {
 
        System.out.println(root.data);
 
-       preorder(root);
-       System.out.println();
+    //    preorder(root);
+    //    System.out.println();
        inorder(root);
-       System.out.println();
-       postorder(root);
+    //    System.out.println();
+    //    postorder(root);
     }
 }
