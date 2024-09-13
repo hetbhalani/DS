@@ -25,7 +25,7 @@ public class BinaryTreeDemo {
             return newNode;
         }  
     }
-
+    //Traversels
     public static void preorder(Node root){
         if(root == null){
             return;
