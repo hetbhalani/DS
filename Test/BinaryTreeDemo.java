@@ -75,7 +75,10 @@ public class BinaryTreeDemo {
                 }
             }
             else{
-                System.out.println(curr.data);
+                System.out.print(curr.data+" ");
+                if(curr.left != null){
+                    q.add(curr.left);
+                }
                 if(curr.right != null){
                     q.add(curr.right);
                 }
@@ -92,10 +95,12 @@ public class BinaryTreeDemo {
 
        System.out.println(root.data);
 
-       preorder(root);
-       System.out.println();
-       inorder(root);
-       System.out.println();
-       postorder(root);
+    //    preorder(root);
+    //    System.out.println();
+    //    inorder(root);
+    //    System.out.println();
+    //    postorder(root);
+    //    System.out.println();
+       levelorder(root);
     }
 }
