@@ -87,13 +87,24 @@ public class BinaryTreeDemo {
         }
     }
 
+    public static int countNodes(Node root){
+        if(root == null){
+            return 0;
+        }
+
+        int leftNodes = countNodes(root.left);
+        int rightNodes = countNodes(root.right);
+
+        return leftNodes + rightNodes + 1;
+    } 
+
     public static void main(String[] args) {
         int nodes [] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree = new BinaryTree();
 
        Node root = tree.buildTree(nodes);
 
-       System.out.println(root.data);
+    //    System.out.println(root.data);
 
     //    preorder(root);
     //    System.out.println();
@@ -101,6 +112,8 @@ public class BinaryTreeDemo {
     //    System.out.println();
     //    postorder(root);
     //    System.out.println();
-       levelorder(root);
+    //    levelorder(root);
+
+        System.out.println(countNodes(root));
     }
 }
