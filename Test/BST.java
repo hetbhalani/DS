@@ -76,7 +76,10 @@ public class BST {
     }
 
     public static Node inorderSuccessor(Node root){
-        
+        while (root.left != null) {
+            root= root.left;
+        }
+        return root;
     }
 
     public static void main(String[] args) {
@@ -91,5 +94,8 @@ public class BST {
         System.out.println();
 
         System.out.println(search(root, 4 ));
+
+        delete(root, 5);
+        inorder(root);
     }
 }
