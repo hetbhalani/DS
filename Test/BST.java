@@ -60,7 +60,23 @@ public class BST {
             if(root.left == null && root.right == null){
                 return null;
             }
+            if(root.left == null){
+                return root.right;
+            }
+            else if(root.right == null){
+                return root.left;
+            }
+
+            Node InSuc = inorderSuccessor(root.right);
+            root.data = InSuc.data;
+           root.right = delete(root.right, InSuc.data);
         }
+
+        return root;
+    }
+
+    public static Node inorderSuccessor(Node root){
+        
     }
 
     public static void main(String[] args) {
