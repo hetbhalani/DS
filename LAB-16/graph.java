@@ -1,26 +1,6 @@
 import java.util.*;
 
-public class graph {
-    public static void main(String[] args) {
-            Graph g = new Graph();
-            g.insertEdge(1, 2);
-            g.insertEdge(1, 3);
-            g.insertEdge(1, 4);
-            g.insertEdge(2, 5);
-            g.insertEdge(2, 6);
-            g.insertEdge(3, 7);
-            g.insertEdge(3, 8);
-    
-            System.out.println("DFS: ");
-            g.dfs(1);
-    
-            System.out.println("\nBFS: ");
-            g.bfs(1);
-        }
-    }    
-
-
-class Graph{
+public class Graph{
     private Map<Integer, List<Integer>> adj;
     Graph(){
         adj = new HashMap<>();
@@ -64,5 +44,21 @@ class Graph{
                 }
             }
         }
-    }   
+    } 
+    public static void main(String[] args) {
+        Graph g = new Graph();
+        g.insertEdge(1, 2);
+        g.insertEdge(1, 3);
+        g.insertEdge(1, 4);
+        g.insertEdge(2, 5);
+        g.insertEdge(2, 6);
+        g.insertEdge(3, 7);
+        g.insertEdge(3, 8);
+
+        System.out.println("DFS: ");
+        g.dfs(1);
+
+        System.out.println("\nBFS: ");
+        g.bfs(1);
+    }  
 }
