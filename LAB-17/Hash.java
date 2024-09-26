@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Lab17_88 { 
+public class Hash { 
     static int[] hash = new int[20];
 
     public static void main(String[] args) {
